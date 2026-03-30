@@ -29,6 +29,22 @@ const Bookingpage = async ({ params }: BookingPageProps) => {
             {user.name}'s Scheduler
           </h1>
           <p className="text-slate-500 mt-2">Book a session in just a few clicks.</p>
+
+          <div className="p-6 sm:p-8 bg-slate-50/50">
+            <h2 className="font-semibold text-lg mb-6 flex items-center gap-2">
+              <span className="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-xs"></span>
+              Select Time
+            </h2>
+            {!user.availability ? (
+              <div className="bg-amber-50 border border-amber-200 text-amber-700 p-4 rounded-xl text-sm">
+                This user hasn't set up their available hours yet.
+              </div>
+            ) : (
+              <p className="text-slate-500 text-sm italic">
+                Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone}
+              </p>
+            )}
+          </div>
         </div>
 
         {/* NO GRID HERE - Just call the component */}
