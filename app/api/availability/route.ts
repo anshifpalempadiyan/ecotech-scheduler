@@ -16,7 +16,7 @@ export const POST = async (req: Request) => {
         const body = await req.json()
         const { startTime, endTime } = body
 
-        const user = await prisma.user.findUnique({ where: { email: session.user.email } })
+        const user = await prisma.user.findFirst({ where: { email: session.user.email } })
 
         if (!user) {
             return new NextResponse("User not found", { status: 404 })
