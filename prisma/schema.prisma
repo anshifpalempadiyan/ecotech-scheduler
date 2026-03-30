@@ -93,3 +93,12 @@ model Booking {
   timeSlot   String
   createdAt  DateTime @default(now())
 }
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
