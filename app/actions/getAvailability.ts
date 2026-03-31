@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prismadb"
 
 
 export async function getUserAvailability( username : string ) {
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findFirst({
         where : {  username },
         include : { availability : true,}
     })
